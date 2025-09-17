@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About COGNIZANCE 26 - AI & Robotics Event</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-space: #0a0e23;
+            --neon-blue: #00f7ff;
+            --electric-purple: #b300ff;
+            --hot-magenta: #ff00f7;
+            --cyber-pink: #ff00aa;
+            --matrix-green: #00ff9d;
+            --void-black: #000011;
+            --star-white: #e0e0ff;
+            --glow: 0 0 10px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--deep-space);
+            color: var(--star-white);
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 500;
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(179, 0, 255, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(0, 247, 255, 0.15) 0%, transparent 30%),
+                linear-gradient(to bottom, var(--void-black), var(--deep-space));
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Cyberpunk Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--void-black);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--electric-purple), var(--neon-blue));
+            border-radius: 5px;
+        }
+        
+        /* Navigation - Holographic */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            background: rgba(10, 14, 35, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 247, 255, 0.2);
+            box-shadow: 0 5px 30px rgba(0, 247, 255, 0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        #nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        #nav-menu li {
+            margin-left: 2rem;
+            position: relative;
+        }
+        
+        #nav-menu li a {
+            color: var(--star-white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        #nav-menu li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--electric-purple));
+            transition: width 0.3s ease;
+        }
+        
+        #nav-menu li a:hover::before {
+            width: 100%;
+        }
+        
+        #nav-menu li a.active {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .hamburger i {
+            font-size: 1.8rem;
+            color: var(--neon-blue);
+            transition: transform 0.3s ease;
+        }
+        
+        /* Logo Styles */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            height: 75px;
+            transition: all 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 8px rgba(0, 247, 255, 0.7));
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: var(--glow) rgba(0, 247, 255, 0.3);
+            transition: all 0.5s ease;
+        }
+
+        .logo-text:hover {
+            text-shadow: 
+                0 0 10px rgba(0, 247, 255, 0.5),
+                0 0 20px rgba(0, 247, 255, 0.3),
+                0 0 30px rgba(0, 247, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* Hero Section - About Page */
+        .about-hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 247, 255, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(179, 0, 255, 0.1) 0%, transparent 30%);
+            z-index: -1;
+        }
+        
+        .about-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about-hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple), var(--cyber-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+            animation: textGlow 3s infinite alternate;
+        }
+        
+        .about-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            color: rgba(224, 224, 255, 0.8);
+        }
+        
+        /* Mission Section */
+        .mission {
+            padding: 8rem 5%;
+            position: relative;
+            background: rgba(10, 14, 35, 0.9);
+        }
+        
+        .mission-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .mission-text {
+            position: relative;
+        }
+        
+        .mission-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--cyber-pink), var(--hot-magenta));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .mission-text p {
+            margin-bottom: 1.5rem;
+            color: rgba(224, 224, 255, 0.8);
+            font-size: 1.1rem;
+        }
+        
+        .mission-image {
+            position: relative;
+            height: 550px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 0, 247, 0.3);
+            transition: all 0.5s ease;
+        }
+        
+        .mission-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 50px rgba(255, 0, 247, 0.5);
+        }
+        
+        .mission-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .mission-image:hover img {
+            transform: scale(1.1);
+        }
+        
+        .mission-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                rgba(179, 0, 255, 0.2), 
+                rgba(0, 247, 255, 0.2));
+            z-index: 1;
+            mix-blend-mode: screen;
+        }
+        
+        /* History Timeline */
+        .history {
+            padding: 8rem 5%;
+            position: relative;
+            background: linear-gradient(to bottom, rgba(10, 14, 35, 0.9), rgba(10, 14, 35, 0.9));
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, var(--neon-blue), var(--matrix-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--electric-purple), var(--neon-blue));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background: var(--neon-blue);
+            border: 4px solid var(--electric-purple);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid rgba(0, 247, 255, 0.3);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent rgba(0, 247, 255, 0.3);
+        }
+        
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid rgba(0, 247, 255, 0.3);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent rgba(0, 247, 255, 0.3) transparent transparent;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background: rgba(10, 14, 35, 0.7);
+            position: relative;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 247, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.5s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 247, 255, 0.2);
+        }
+        
+        .timeline-content h3 {
+            color: var(--neon-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-content p {
+            color: rgba(224, 224, 255, 0.8);
+        }
+        
+        .timeline-date {
+            color: var(--matrix-green);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        /* Team Section */
+        .team {
+            padding: 8rem 5%;
+            text-align: center;
+            background: rgba(0, 0, 17, 0.7);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .team-member {
+            background: rgba(10, 14, 35, 0.7);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(0, 247, 255, 0.2);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 247, 255, 0.2);
+        }
+        
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            z-index: -1;
+            background: linear-gradient(45deg, var(--electric-purple), var(--neon-blue), var(--matrix-green));
+            background-size: 200% 200%;
+            border-radius: 10px;
+            opacity: 0;
+            transition: 0.5s;
+            animation: gradientBorder 3s linear infinite;
+        }
+        
+        .team-member:hover::before {
+            opacity: 1;
+        }
+        
+        .member-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+            border: 3px solid var(--neon-blue);
+            position: relative;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+        
+        .team-member h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--matrix-green);
+        }
+        
+        .team-member p {
+            color: var(--neon-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .member-bio {
+            color: rgba(224, 224, 255, 0.8);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--star-white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--neon-blue);
+            transform: translateY(-5px);
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 6rem 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 65%, rgba(0, 247, 255, 0.1) 100%),
+                linear-gradient(-45deg, transparent 65%, rgba(179, 0, 255, 0.1) 100%);
+            z-index: -1;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+        
+        .stat-item {
+            background: rgba(10, 14, 35, 0.7);
+            border-radius: 8px;
+            padding: 2rem 1rem;
+            border: 1px solid rgba(0, 247, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 247, 255, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(45deg, var(--neon-blue), var(--matrix-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--neon-blue);
+        }
+        
+        /* Footer - Cyber Grid */
+        footer {
+            background: linear-gradient(to top, var(--void-black), var(--deep-space));
+            padding: 5rem 5% 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--neon-blue);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), transparent);
+        }
+        
+        .footer-col p {
+            color: rgba(224, 224, 255, 0.7);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: rgba(224, 224, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--neon-blue);
+            transform: translateX(5px);
+        }
+        
+        .footer-social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .footer-social-links a {
+            color: var(--star-white);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social-links a:hover {
+            color: var(--neon-blue);
+            transform: translateY(-5px) scale(1.2);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(0, 247, 255, 0.2);
+            margin-top: 2rem;
+        }
+        
+        .copyright {
+            color: rgba(224, 224, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Glitch Effects */
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+
+        .glitch::before {
+            color: var(--hot-magenta);
+            z-index: -1;
+            animation: glitch-effect 3s infinite;
+        }
+
+        .glitch::after {
+            color: var(--neon-blue);
+            z-index: -2;
+            animation: glitch-effect 2s infinite reverse;
+        }
+
+        @keyframes glitch-effect {
+            0% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-3px, 3px);
+            }
+            40% {
+                transform: translate(-3px, -3px);
+            }
+            60% {
+                transform: translate(3px, 3px);
+            }
+            80% {
+                transform: translate(3px, -3px);
+            }
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        /* Random Glitch Trigger */
+        .random-glitch {
+            position: relative;
+        }
+
+        .random-glitch:hover {
+            animation: random-glitch 0.5s linear infinite;
+        }
+
+        @keyframes random-glitch {
+            0% {
+                text-shadow: 2px 0 var(--hot-magenta), -2px 0 var(--neon-blue);
+                transform: translate(0);
+            }
+            25% {
+                text-shadow: -2px 0 var(--hot-magenta), 2px 0 var(--neon-blue);
+                transform: translate(2px);
+            }
+            50% {
+                text-shadow: 2px 0 var(--hot-magenta), -2px 0 var(--neon-blue);
+                transform: translate(0);
+            }
+            75% {
+                text-shadow: -2px 0 var(--hot-magenta), 2px 0 var(--neon-blue);
+                transform: translate(-2px);
+            }
+            100% {
+                text-shadow: 2px 0 var(--hot-magenta), -2px 0 var(--neon-blue);
+                transform: translate(0);
+            }
+        }
+
+            /* Section Glitch Effect */
+            .glitch-section {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .glitch-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    to right,
+                    transparent,
+                    rgba(0, 247, 255, 0.1),
+                    transparent
+                );
+                animation: section-glitch 8s infinite;
+                z-index: -1;
+            }
+
+            @keyframes section-glitch {
+                0%, 100% {
+                    transform: translateX(0);
+                    opacity: 0.1;
+                }
+                10%, 30%, 50%, 70%, 90% {
+                    transform: translateX(-2%);
+                    opacity: 0.2;
+                }
+                20%, 40%, 60%, 80% {
+                    transform: translateX(2%);
+                    opacity: 0.2;
+                }
+            }
+        
+        /* Animations */
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(179, 0, 255, 0.7), 0 0 30px rgba(0, 247, 255, 0.5);
+            }
+        }
+        
+        @keyframes gradientBorder {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .delay-1 {
+            transition-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            transition-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            transition-delay: 0.6s;
+        }
+        
+        .delay-4 {
+            transition-delay: 0.8s;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .mission-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .mission-image {
+                height: 300px;
+                margin-top: 2rem;
+                order: -1;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid rgba(0, 247, 255, 0.3);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent rgba(0, 247, 255, 0.3) transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+        
+ @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            #nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 400px;
+                height: 100vh;
+                background: rgba(10, 14, 35, 0.95);
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                z-index: 1000;
+                border-left: 1px solid rgba(0, 247, 255, 0.2);
+                box-shadow: -5px 0 30px rgba(0, 247, 255, 0.1);
+            }
+
+            #nav-menu.active {
+                right: 0;
+            }
+
+            #nav-menu li {
+                margin: 1.5rem 0;
+            }
+
+            #nav-menu li a {
+                font-size: 1.5rem;
+                padding: 0.5rem 1.5rem;
+            }
+            
+            .about-hero {
+                height: 60vh;
+                margin-top: 70px;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .team-grid, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    <!-- Add these before the closing head tag -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        /* Custom Cursor */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--neon-blue);
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: all 0.1s ease;
+            transition-property: background, transform;
+        }
+        
+        .cursor.hovered {
+            transform: translate(-50%, -50%) scale(1.5);
+            background: var(--neon-blue);
+            opacity: 0.5;
+        }
+        
+        .cursor.clicked {
+            transform: translate(-50%, -50%) scale(0.8);
+            background: var(--electric-purple);
+        }
+        
+        /* Particle Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .glitch-hover {
+            position: relative;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .glitch-hover:hover {
+            animation: glitch-effect 0.5s linear infinite;
+            text-shadow: 
+                0 0 10px var(--neon-blue),
+                0 0 20px var(--electric-purple),
+                0 0 30px var(--hot-magenta);
+        }
+
+        .glitch-hover::before,
+        .glitch-hover::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--deep-space);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .glitch-hover:hover::before {
+            left: 4px;
+            opacity: 0.5;
+            color: var(--neon-blue);
+            animation: glitch-effect 0.3s linear infinite;
+        }
+
+        .glitch-hover:hover::after {
+            left: -4px;
+            opacity: 0.5;
+            color: var(--hot-magenta);
+            animation: glitch-effect 0.3s linear infinite reverse;
+        }
+        
+        /* Cyber Grid Background Alternative */
+        .cyber-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(0, 247, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 247, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .active-glitch::before {
+    animation: active-glitch 0.3s linear;
+}
+
+        @keyframes active-glitch {
+            0% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+            20% {
+                transform: translateX(-10px);
+                opacity: 0.3;
+            }
+            40% {
+                transform: translateX(10px);
+                opacity: 0.6;
+            }
+            60% {
+                transform: translateX(-5px);
+                opacity: 0.9;
+            }
+            80% {
+                transform: translateX(5px);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="cyber-grid"></div>
+    <div class="cursor"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="CZ.png" alt="Cognizance Logo" class="logo-img">
+                <div class="logo-text" data-text="COGNIZANCE 26">COGNIZANCE 26</div>
+            </div>
+            
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+              <ul id="nav-menu">
+                <li><a href="index.html" class="active hover-effect">Home</a></li>
+                <li><a href="events.html" class="active hover-effect">Events</a></li>
+                <li><a href="speakers.html" class="active hover-effect">Speakers</a></li>
+                <li><a href="team.html" class="active hover-effect">Team</a></li>
+                <li><a href="about.html" class="active hover-effect">About</a></li>
+                <li><a href="contact.html" class="active hover-effect">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero glitch-section">
+        <div class="about-hero-content animate-on-scroll">
+            <h1 class="glitch" data-text="About COGNIZANCE">About COGNIZANCE</h1>
+            <p>COGNIZANCE is the annual technical festival of CHARUSAT...</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="mission-container">
+            <div class="mission-text animate-on-scroll">
+                <h2>Our Mission</h2>
+                <p>At COGNIZANCE, we strive to create a platform where technology enthusiasts, researchers, and industry leaders converge to explore the cutting edge of artificial intelligence and robotics.</p>
+                <p>Our mission is to inspire innovation, foster collaboration, and showcase groundbreaking technologies that will shape the future of humanity.</p>
+                <p>This year's edition focuses on practical applications of AI in robotics, with hands-on workshops, competitions, and networking opportunities.</p>
+            </div>
+            <div class="mission-image animate-on-scroll delay-1">
+                <img src="CZ.png" alt="AI and Robotics">
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="history">
+        <h2 class="section-title">Our Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item left animate-on-scroll">
+                <div class="timeline-content">
+                    <div class="timeline-date">2015</div>
+                    <h3>Inception</h3>
+                    <p>COGNIZANCE was born as a small technical event at CHARUSAT with just 5 competitions and 200 participants.</p>
+                </div>
+            </div>
+            <div class="timeline-item right animate-on-scroll delay-1">
+                <div class="timeline-content">
+                    <div class="timeline-date">2017</div>
+                    <h3>First Major Sponsorship</h3>
+                    <p>Secured our first corporate sponsorship and expanded to 15 events with 800+ participants.</p>
+                </div>
+            </div>
+            <div class="timeline-item left animate-on-scroll delay-2">
+                <div class="timeline-content">
+                    <div class="timeline-date">2019</div>
+                    <h3>International Recognition</h3>
+                    <p>Featured our first international speaker and crossed 2000 participants from 5 countries.</p>
+                </div>
+            </div>
+            <div class="timeline-item right animate-on-scroll delay-3">
+                <div class="timeline-content">
+                    <div class="timeline-date">2021</div>
+                    <h3>Virtual Transition</h3>
+                    <p>Successfully transitioned to a fully virtual format during the pandemic, reaching 5000+ attendees globally.</p>
+                </div>
+            </div>
+            <div class="timeline-item left animate-on-scroll">
+                <div class="timeline-content">
+                    <div class="timeline-date">2023</div>
+                    <h3>Record Participation</h3>
+                    <p>Broke all records with 10,000+ participants and 50+ events in hybrid format.</p>
+                </div>
+            </div>
+            <div class="timeline-item right animate-on-scroll delay-1">
+                <div class="timeline-content">
+                    <div class="timeline-date">2026</div>
+                    <h3>COGNIZANCE 26</h3>
+                    <p>Our biggest edition yet, focusing exclusively on AI and Robotics with world-class speakers and competitions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <h2 class="section-title">Meet The Team</h2>
+        <div class="team-grid">
+            <div class="team-member animate-on-scroll">
+                <div class="member-image">
+                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Dr. Priya Patel">
+                </div>
+                <h3>Dr. Priya Patel</h3>
+                <p>Festival Director</p>
+                <div class="member-bio">Computer Science professor with 15 years of experience in AI research and event organization.</div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="team-member animate-on-scroll delay-1">
+                <div class="member-image">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma">
+                </div>
+                <h3>Rahul Sharma</h3>
+                <p>Technical Head</p>
+                <div class="member-bio">Robotics engineer leading our technical team and competition design.</div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="team-member animate-on-scroll delay-2">
+                <div class="member-image">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Ananya Gupta">
+                </div>
+                <h3>Ananya Gupta</h3>
+                <p>Marketing Head</p>
+                <div class="member-bio">Digital marketing expert managing our outreach and sponsor relations.</div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="team-member animate-on-scroll delay-3">
+                <div class="member-image">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Vikram Joshi">
+                </div>
+                <h3>Vikram Joshi</h3>
+                <p>Logistics Head</p>
+                <div class="member-bio">Operations specialist ensuring seamless execution of all events.</div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <h2 class="section-title">By The Numbers</h2>
+        <div class="stats-grid">
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-number" id="participants-count">0</div>
+                <div class="stat-label">Participants</div>
+            </div>
+            <div class="stat-item animate-on-scroll delay-1">
+                <div class="stat-number" id="events-count">0</div>
+                <div class="stat-label">Events</div>
+            </div>
+            <div class="stat-item animate-on-scroll delay-2">
+                <div class="stat-number" id="speakers-count">0</div>
+                <div class="stat-label">Speakers</div>
+            </div>
+            <div class="stat-item animate-on-scroll delay-3">
+                <div class="stat-number" id="countries-count">0</div>
+                <div class="stat-label">Countries</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>COGNIZANCE 26</h3>
+                <p>The premier tech event exploring the cutting edge of artificial intelligence and robotics technology.</p>
+                <div class="footer-social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> CHARUSAT Campus, Changa 388421, Gujarat, India</p>
+                <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                <p><i class="fas fa-envelope"></i> info@cognizance26.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 COGNIZANCE 26 | CHARUSAT. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('#nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Animate on scroll functionality
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // Initialize counters when stats section is in view
+        const statsSection = document.querySelector('.stats');
+        const statsObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                // Set target values
+                document.getElementById('participants-count').setAttribute('data-target', '10000');
+                document.getElementById('events-count').setAttribute('data-target', '50');
+                document.getElementById('speakers-count').setAttribute('data-target', '35');
+                document.getElementById('countries-count').setAttribute('data-target', '15');
+                
+                animateCounters();
+                statsObserver.unobserve(statsSection);
+            }
+        });
+
+        statsObserver.observe(statsSection);
+        
+    // Custom Cursor
+    const cursor = document.querySelector('.cursor');
+    
+    document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+    
+    // Cursor hover effects
+    document.querySelectorAll('a, button, .hover-effect').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('hovered');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hovered');
+        });
+    });
+    
+    document.addEventListener('mousedown', () => {
+        cursor.classList.add('clicked');
+    });
+    
+    document.addEventListener('mouseup', () => {
+        cursor.classList.remove('clicked');
+    });
+    
+    // Initialize particle.js background
+    particlesJS('particles-js', {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#00f7ff"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#00f7ff",
+                "opacity": 0.2,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 2,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "grab"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 140,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+
+    // Random glitch effect for headings
+function applyRandomGlitch() {
+    const glitchHeadings = document.querySelectorAll('.glitch-heading');
+    
+    glitchHeadings.forEach(heading => {
+        heading.addEventListener('mouseenter', () => {
+            heading.classList.add('random-glitch');
+        });
+        
+        heading.addEventListener('mouseleave', () => {
+            heading.classList.remove('random-glitch');
+        });
+    });
+    
+    // Random section glitch
+    setInterval(() => {
+        const sections = document.querySelectorAll('.glitch-section');
+        if (sections.length > 0) {
+            const randomSection = sections[Math.floor(Math.random() * sections.length)];
+            randomSection.classList.add('active-glitch');
+            setTimeout(() => {
+                randomSection.classList.remove('active-glitch');
+            }, 300);
+        }
+    }, 8000);
+}
+
+// Call the function
+applyRandomGlitch();
+    </script>
+</body>
+</html>
